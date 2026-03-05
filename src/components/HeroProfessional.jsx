@@ -1,43 +1,59 @@
 export default function HeroProfessional() {
   return (
-    <section id="home" className="pt-20 bg-gradient-to-br from-primary-50 to-white">
-      <div className="container mx-auto px-4 py-20 md:py-32">
+    <section id="home" className="pt-20 bg-gradient-to-br from-primary-50 via-white to-primary-50 relative overflow-hidden">
+      {/* Elementos decorativos de fundo animados */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+      <div className="absolute top-40 left-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+      <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+
+      <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Texto */}
           <div className="space-y-6">
-            <div className="inline-block px-4 py-2 bg-primary-100 rounded-full">
-              <span className="text-primary-900 font-semibold text-sm">Engenharia Civil</span>
+            <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary-100 to-blue-100 rounded-full shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in">
+              <span className="text-primary-900 font-semibold text-sm">✨ Engenharia Civil</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
-              Engenheira Diagnóstica
-              <span className="block text-primary-900">Mariana Silva</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight animate-fade-in-up">
+              Engenheira
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-900 via-primary-800 to-primary-700 animate-gradient">Mariana Silva</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed animate-fade-in-up animation-delay-200">
               Soluções em engenharia civil com qualidade, segurança e responsabilidade técnica para seu projeto.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-4 pt-4 animate-fade-in-up animation-delay-400">
               <a
                 href="#contact"
-                className="px-8 py-3 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
+                className="group px-8 py-4 bg-gradient-to-r from-primary-900 to-primary-800 hover:from-primary-800 hover:to-primary-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden"
               >
-                Entre em Contato
+                <span className="relative z-10 flex items-center gap-2">
+                  Entre em Contato
+                  <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
               </a>
               <a
                 href="#services"
-                className="px-8 py-3 bg-white hover:bg-gray-50 text-primary-900 font-semibold rounded-lg transition-colors border-2 border-primary-900"
+                className="group px-8 py-4 bg-white hover:bg-primary-50 text-primary-900 font-semibold rounded-xl transition-all duration-300 border-2 border-primary-900 hover:border-primary-800 shadow-md hover:shadow-lg transform hover:-translate-y-1"
               >
-                Ver Serviços
+                <span className="flex items-center gap-2">
+                  Ver Serviços
+                  <svg className="w-5 h-5 transform group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
               </a>
             </div>
           </div>
 
           {/* Foto */}
-          <div className="relative">
+          <div className="relative animate-fade-in-right">
             <div className="relative z-10">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-8 border-white transform hover:scale-105 transition-transform duration-500">
                 <img
                   src="/mariana.jpg"
                   alt="Engenheira Mariana Silva"
@@ -46,9 +62,9 @@ export default function HeroProfessional() {
               </div>
             </div>
 
-            {/* Decoração */}
-            <div className="absolute -bottom-6 -right-6 w-72 h-72 bg-primary-200 rounded-2xl -z-10"></div>
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary-400 rounded-full -z-10"></div>
+            {/* Decoração animada */}
+            <div className="absolute -bottom-6 -right-6 w-72 h-72 bg-gradient-to-br from-primary-200 to-primary-300 rounded-2xl -z-10 animate-pulse-slow"></div>
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full -z-10 animate-bounce-slow"></div>
           </div>
         </div>
       </div>

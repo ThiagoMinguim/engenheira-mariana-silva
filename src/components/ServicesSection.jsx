@@ -1,58 +1,42 @@
+import { HiDocumentText, HiOfficeBuilding, HiClipboardCheck, HiBriefcase, HiHome, HiPencilAlt } from 'react-icons/hi'
+
 export default function ServicesSection() {
   const services = [
     {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-      ),
+      icon: <HiDocumentText className="w-10 h-10" />,
       title: "Projetos Estruturais",
-      description: "Desenvolvimento completo de projetos estruturais para edificações residenciais, comerciais e industriais."
+      description: "Desenvolvimento completo de projetos estruturais para edificações residenciais, comerciais e industriais.",
+      gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-      ),
+      icon: <HiOfficeBuilding className="w-10 h-10" />,
       title: "Projetos Arquitetônicos",
-      description: "Elaboração de projetos arquitetônicos funcionais e esteticamente planejados para sua obra."
+      description: "Elaboração de projetos arquitetônicos funcionais e esteticamente planejados para sua obra.",
+      gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-        </svg>
-      ),
+      icon: <HiClipboardCheck className="w-10 h-10" />,
       title: "Laudos e Perícias",
-      description: "Laudos técnicos de avaliação, vistorias e perícias de engenharia com responsabilidade técnica."
+      description: "Laudos técnicos de avaliação, vistorias e perícias de engenharia com responsabilidade técnica.",
+      gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-        </svg>
-      ),
+      icon: <HiBriefcase className="w-10 h-10" />,
       title: "Gerenciamento de Obras",
-      description: "Acompanhamento e gestão técnica de obras, garantindo prazos, custos e qualidade."
+      description: "Acompanhamento e gestão técnica de obras, garantindo prazos, custos e qualidade.",
+      gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-      ),
+      icon: <HiHome className="w-10 h-10" />,
       title: "Regularização de Obras",
-      description: "Regularização e legalização de edificações junto aos órgãos competentes."
+      description: "Regularização e legalização de edificações junto aos órgãos competentes.",
+      gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-        </svg>
-      ),
+      icon: <HiPencilAlt className="w-10 h-10" />,
       title: "Consultoria Técnica",
-      description: "Consultoria especializada para projetos de construção civil e reformas."
+      description: "Consultoria especializada para projetos de construção civil e reformas.",
+      gradient: "from-primary-800 to-primary-900"
     }
   ]
 
@@ -78,12 +62,15 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 group"
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 group relative overflow-hidden"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-800 to-primary-900 rounded-lg flex items-center justify-center text-white mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              {/* Efeito de brilho ao passar o mouse */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
+
+              <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center text-white mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 shadow-lg group-hover:shadow-xl relative z-10`}>
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">
+              <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-primary-900 transition-colors">
                 {service.title}
               </h3>
               <p className="text-gray-600 leading-relaxed">
