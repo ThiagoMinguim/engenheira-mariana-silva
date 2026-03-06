@@ -8,14 +8,14 @@ export default function FooterProfessional() {
           {/* Sobre */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>MS</span>
+              <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300 tracking-tighter">MS</span>
               <div>
                 <h3 className="text-white font-bold text-lg">Mariana Silva</h3>
                 <p className="text-xs text-primary-400">Engenharia Civil</p>
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Soluções em engenharia civil com qualidade, segurança e responsabilidade técnica para seu projeto.
+              Soluções completas para cuidar do seu patrimônio!
             </p>
           </div>
 

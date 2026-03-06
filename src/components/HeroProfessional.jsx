@@ -11,7 +11,7 @@ export default function HeroProfessional() {
           {/* Texto */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight animate-fade-in-up">
-              Engenheira
+              Engenheira Diagnóstica
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-900 via-primary-800 to-primary-700 animate-gradient">Mariana Silva</span>
             </h1>
 

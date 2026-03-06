@@ -83,7 +83,7 @@ export default function ServicesSection() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-900 to-primary-700 mx-auto mt-6 rounded-full"></div>
           <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
-            Soluções completas em engenharia civil para seu projeto, com responsabilidade técnica e qualidade garantida.
+           Soluções completas para cuidar do seu patrimônio!
           </p>
         </div>
 
