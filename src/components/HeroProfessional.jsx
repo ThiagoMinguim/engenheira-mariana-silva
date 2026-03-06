@@ -16,7 +16,7 @@ export default function HeroProfessional() {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed animate-fade-in-up animation-delay-200">
-              Sou Mariana Silva, engenheira civil especializada em engenharia diagnóstica, comprometida em entregar soluções técnicas precisas para vistorias, inspeções prediais e laudos em imóveis residenciais, comerciais e industriais.
+              Diagnósticos com rigor técnico para garantir a segurança, durabilidade e conformidade de sua infraestrutura.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4 animate-fade-in-up animation-delay-400">

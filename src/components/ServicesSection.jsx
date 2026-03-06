@@ -3,7 +3,7 @@ import { HiEye, HiClipboardCheck, HiDocumentText, HiCog, HiScale, HiSupport } fr
 export default function ServicesSection() {
   const services = [
     {
-      icon: <HiEye className="w-10 h-10" />,
+      icon: <HiEye className="w-8 h-8" />,
       title: "Vistorias",
       items: [
         "Vistoria Cautelar de Vizinhança",
@@ -16,7 +16,7 @@ export default function ServicesSection() {
       gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: <HiClipboardCheck className="w-10 h-10" />,
+      icon: <HiClipboardCheck className="w-8 h-8" />,
       title: "Inspeção",
       items: [
         "Inspeção Predial",
@@ -27,7 +27,7 @@ export default function ServicesSection() {
       gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: <HiDocumentText className="w-10 h-10" />,
+      icon: <HiDocumentText className="w-8 h-8" />,
       title: "Laudos",
       items: [
         "Laudo Técnico de Inspeção Predial",
@@ -39,7 +39,7 @@ export default function ServicesSection() {
       gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: <HiSupport className="w-10 h-10" />,
+      icon: <HiSupport className="w-8 h-8" />,
       title: "Assistência Técnica",
       items: [
         "Acompanhamento técnico especializado",
@@ -49,7 +49,7 @@ export default function ServicesSection() {
       gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: <HiScale className="w-10 h-10" />,
+      icon: <HiScale className="w-8 h-8" />,
       title: "Perícia em Ações Judiciais",
       items: [
         "Perícia técnica judicial",
@@ -59,7 +59,7 @@ export default function ServicesSection() {
       gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: <HiCog className="w-10 h-10" />,
+      icon: <HiCog className="w-8 h-8" />,
       title: "Plano de Manutenção Predial",
       items: [
         "Planejamento de manutenção preventiva",
@@ -81,8 +81,8 @@ export default function ServicesSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
             Serviços de Engenharia
           </h2>
-          <div className="w-20 h-1 bg-primary-900 mx-auto mt-4"></div>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-gradient-to-r from-primary-900 to-primary-700 mx-auto mt-6 rounded-full"></div>
+          <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
             Soluções completas em engenharia civil para seu projeto, com responsabilidade técnica e qualidade garantida.
           </p>
         </div>
@@ -97,7 +97,7 @@ export default function ServicesSection() {
               {/* Efeito de brilho ao passar o mouse */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
 
-              <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center text-white mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 shadow-lg group-hover:shadow-xl relative z-10`}>
+              <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center text-white mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg group-hover:shadow-xl relative z-10`}>
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-primary-900 transition-colors">
@@ -118,8 +118,10 @@ export default function ServicesSection() {
         {/* CTA */}
         <div className="text-center mt-16">
           <a
-            href="#contact"
-            className="inline-block px-8 py-3 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
+            href="https://wa.me/message/CVTWOWWWB553G1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-900 to-primary-800 hover:from-primary-800 hover:to-primary-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Solicite um Orçamento
           </a>

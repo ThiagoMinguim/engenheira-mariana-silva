@@ -17,7 +17,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo/Nome */}
           <div className="flex items-center space-x-3">
-            <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-900 to-primary-700" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>MS</span>
+            <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-900 to-primary-600 tracking-tighter">MS</span>
             <div>
               <h1 className="text-xl font-bold text-gray-800">Mariana Silva</h1>
               <p className="text-xs text-primary-900">Engenharia Civil</p>
