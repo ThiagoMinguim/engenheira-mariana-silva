@@ -34,6 +34,11 @@ export default function FooterProfessional() {
                 </a>
               </li>
               <li>
+                <a href="#investir" className="text-sm hover:text-primary-400 transition-colors">
+                  Por que investir
+                </a>
+              </li>
+              <li>
                 <a href="#services" className="text-sm hover:text-primary-400 transition-colors">
                   Serviços
                 </a>

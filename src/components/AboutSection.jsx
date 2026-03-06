@@ -87,7 +87,7 @@ export default function AboutSection() {
         </div>
 
         {/* Por que investir */}
-        <div className="mt-20 bg-gradient-to-br from-primary-50 via-white to-primary-50 rounded-[2rem] p-8 md:p-12 relative overflow-hidden shadow-xl border border-primary-100">
+        <div id="investir" className="mt-20 bg-gradient-to-br from-primary-50 via-white to-primary-50 rounded-[2rem] p-8 md:p-12 relative overflow-hidden shadow-xl border border-primary-100">
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary-100 rounded-full blur-3xl mix-blend-multiply opacity-50 -z-0"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl mix-blend-multiply opacity-50 -z-0"></div>

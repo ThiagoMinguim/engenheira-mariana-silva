@@ -39,6 +39,12 @@ export default function Header() {
               Sobre
             </button>
             <button
+              onClick={() => scrollToSection('investir')}
+              className="text-gray-700 hover:text-primary-900 transition-colors font-medium"
+            >
+              Por que investir
+            </button>
+            <button
               onClick={() => scrollToSection('services')}
               className="text-gray-700 hover:text-primary-900 transition-colors font-medium"
             >
@@ -89,6 +95,12 @@ export default function Header() {
               className="block w-full text-left text-gray-700 hover:text-primary-900 transition-colors font-medium py-2"
             >
               Sobre
+            </button>
+            <button
+              onClick={() => scrollToSection('investir')}
+              className="block w-full text-left text-gray-700 hover:text-primary-900 transition-colors font-medium py-2"
+            >
+              Por que investir
             </button>
             <button
               onClick={() => scrollToSection('services')}
