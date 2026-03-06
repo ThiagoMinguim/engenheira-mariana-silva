@@ -1,41 +1,71 @@
-import { HiDocumentText, HiOfficeBuilding, HiClipboardCheck, HiBriefcase, HiHome, HiPencilAlt } from 'react-icons/hi'
+import { HiEye, HiClipboardCheck, HiDocumentText, HiCog, HiScale, HiSupport } from 'react-icons/hi'
 
 export default function ServicesSection() {
   const services = [
     {
-      icon: <HiDocumentText className="w-10 h-10" />,
-      title: "Projetos Estruturais",
-      description: "Desenvolvimento completo de projetos estruturais para edificações residenciais, comerciais e industriais.",
-      gradient: "from-primary-800 to-primary-900"
-    },
-    {
-      icon: <HiOfficeBuilding className="w-10 h-10" />,
-      title: "Projetos Arquitetônicos",
-      description: "Elaboração de projetos arquitetônicos funcionais e esteticamente planejados para sua obra.",
+      icon: <HiEye className="w-10 h-10" />,
+      title: "Vistorias",
+      items: [
+        "Vistoria Cautelar de Vizinhança",
+        "Vistoria de Acompanhamento de Obra",
+        "Vistoria de Imóvel Novo",
+        "Vistoria de Recebimento de Obra",
+        "Vistoria Locativa",
+        "Vistoria de Garantia"
+      ],
       gradient: "from-primary-800 to-primary-900"
     },
     {
       icon: <HiClipboardCheck className="w-10 h-10" />,
-      title: "Laudos e Perícias",
-      description: "Laudos técnicos de avaliação, vistorias e perícias de engenharia com responsabilidade técnica.",
+      title: "Inspeção",
+      items: [
+        "Inspeção Predial",
+        "Inspeção Residencial",
+        "Inspeção Comercial",
+        "Inspeção de Fachada"
+      ],
       gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: <HiBriefcase className="w-10 h-10" />,
-      title: "Gerenciamento de Obras",
-      description: "Acompanhamento e gestão técnica de obras, garantindo prazos, custos e qualidade.",
+      icon: <HiDocumentText className="w-10 h-10" />,
+      title: "Laudos",
+      items: [
+        "Laudo Técnico de Inspeção Predial",
+        "Laudo Técnico de Vistoria",
+        "Laudo Técnico de Fachada",
+        "Laudo Técnico de Perícia",
+        "Laudo Técnico para Reforma"
+      ],
       gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: <HiHome className="w-10 h-10" />,
-      title: "Regularização de Obras",
-      description: "Regularização e legalização de edificações junto aos órgãos competentes.",
+      icon: <HiSupport className="w-10 h-10" />,
+      title: "Assistência Técnica",
+      items: [
+        "Acompanhamento técnico especializado",
+        "Suporte em todas as fases do projeto",
+        "Orientação técnica profissional"
+      ],
       gradient: "from-primary-800 to-primary-900"
     },
     {
-      icon: <HiPencilAlt className="w-10 h-10" />,
-      title: "Consultoria Técnica",
-      description: "Consultoria especializada para projetos de construção civil e reformas.",
+      icon: <HiScale className="w-10 h-10" />,
+      title: "Perícia em Ações Judiciais",
+      items: [
+        "Perícia técnica judicial",
+        "Laudos periciais",
+        "Assistência técnica em processos"
+      ],
+      gradient: "from-primary-800 to-primary-900"
+    },
+    {
+      icon: <HiCog className="w-10 h-10" />,
+      title: "Plano de Manutenção Predial",
+      items: [
+        "Planejamento de manutenção preventiva",
+        "Cronograma de manutenções",
+        "Gestão de vida útil do imóvel"
+      ],
       gradient: "from-primary-800 to-primary-900"
     }
   ]
@@ -70,12 +100,17 @@ export default function ServicesSection() {
               <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center text-white mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 shadow-lg group-hover:shadow-xl relative z-10`}>
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-primary-900 transition-colors">
+              <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-primary-900 transition-colors">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {service.description}
-              </p>
+              <ul className="space-y-2">
+                {service.items.map((item, idx) => (
+                  <li key={idx} className="text-gray-600 text-sm flex items-start">
+                    <span className="text-primary-900 mr-2 mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

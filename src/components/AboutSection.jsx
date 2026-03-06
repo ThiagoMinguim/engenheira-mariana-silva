@@ -19,7 +19,7 @@ export default function AboutSection() {
           {/* Conteúdo */}
           <div className="space-y-8">
             <p className="text-lg text-gray-700 leading-relaxed text-center">
-              Sou Mariana Silva, engenheira civil comprometida em entregar soluções técnicas de qualidade para projetos residenciais, comerciais e industriais.
+              Sou Mariana Silva, engenheira civil especializada em engenharia diagnóstica, comprometida em entregar soluções técnicas precisas para vistorias, inspeções prediais e laudos em imóveis residenciais, comerciais e industriais.
             </p>
 
             {/* Cards de Valores */}

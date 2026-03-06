@@ -7,10 +7,8 @@ export default function FooterProfessional() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Sobre */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-800 to-primary-900 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">M</span>
-              </div>
+            <div className="flex items-center space-x-3 mb-4">
+              <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>MS</span>
               <div>
                 <h3 className="text-white font-bold text-lg">Mariana Silva</h3>
                 <p className="text-xs text-primary-400">Engenharia Civil</p>

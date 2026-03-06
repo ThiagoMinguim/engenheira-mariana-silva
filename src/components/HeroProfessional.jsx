@@ -10,17 +10,13 @@ export default function HeroProfessional() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Texto */}
           <div className="space-y-6">
-            <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary-100 to-blue-100 rounded-full shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in">
-              <span className="text-primary-900 font-semibold text-sm">✨ Engenharia Civil</span>
-            </div>
-
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight animate-fade-in-up">
               Engenheira
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-900 via-primary-800 to-primary-700 animate-gradient">Mariana Silva</span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed animate-fade-in-up animation-delay-200">
-              Soluções em engenharia civil com qualidade, segurança e responsabilidade técnica para seu projeto.
+              Sou Mariana Silva, engenheira civil especializada em engenharia diagnóstica, comprometida em entregar soluções técnicas precisas para vistorias, inspeções prediais e laudos em imóveis residenciais, comerciais e industriais.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4 animate-fade-in-up animation-delay-400">
@@ -55,7 +51,7 @@ export default function HeroProfessional() {
             <div className="relative z-10">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-8 border-white transform hover:scale-105 transition-transform duration-500">
                 <img
-                  src="/mariana.jpg"
+                  src="/mari1.png"
                   alt="Engenheira Mariana Silva"
                   className="w-full h-auto object-cover"
                 />

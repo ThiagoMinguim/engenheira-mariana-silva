@@ -16,10 +16,8 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Nome */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-800 to-primary-900 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">M</span>
-            </div>
+          <div className="flex items-center space-x-3">
+            <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-900 to-primary-700" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>MS</span>
             <div>
               <h1 className="text-xl font-bold text-gray-800">Mariana Silva</h1>
               <p className="text-xs text-primary-900">Engenharia Civil</p>
