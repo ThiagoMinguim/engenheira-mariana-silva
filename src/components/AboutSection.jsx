@@ -95,7 +95,7 @@ export default function AboutSection() {
             </motion.h2>
 
             {/* Green divider */}
-            <motion.div variants={fadeUp} custom={1.5} className="w-16 h-[3px] bg-gradient-to-r from-verde to-verde-light mx-auto mt-6 rounded-full" />
+            <motion.div variants={fadeUp} custom={1.5} className="w-16 h-[3px] bg-dourado mx-auto mt-6 rounded-full" />
           </motion.div>
 
           {/* Bio text */}
@@ -124,7 +124,7 @@ export default function AboutSection() {
                 className="card-lift text-center p-8 bg-white border border-cinza-dark/30 rounded-2xl group relative overflow-hidden"
               >
                 {/* Green gradient line at bottom */}
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-verde to-verde-light" />
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-dourado" />
 
                 {/* Icon circle */}
                 <div className="w-20 h-20 bg-verde/[0.08] rounded-full flex items-center justify-center mx-auto mb-6 text-verde group-hover:bg-verde group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:shadow-verde/20">

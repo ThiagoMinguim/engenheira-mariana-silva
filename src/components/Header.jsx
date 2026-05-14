@@ -36,7 +36,7 @@ export default function Header() {
       }`}
     >
       {/* Top accent — thin verde line */}
-      <div className="h-[3px] bg-gradient-to-r from-verde via-verde-light to-verde" />
+      <div className="h-[3px] bg-dourado" />
 
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-[80px]">
@@ -85,7 +85,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="shimmer-btn ml-3 px-6 py-2.5 bg-verde text-white font-body font-semibold text-[13px] rounded-lg hover:bg-verde-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-verde/20"
             >
-              Solicitar diagnóstico
+              Solicitar orçamento
             </motion.a>
           </nav>
 
@@ -129,7 +129,7 @@ export default function Header() {
                   rel="noopener noreferrer"
                   className="block w-full text-center mt-3 px-6 py-3 bg-verde text-white font-body font-semibold text-sm rounded-lg"
                 >
-                  Solicitar diagnóstico
+                  Solicitar orçamento
                 </a>
               </div>
             </motion.nav>

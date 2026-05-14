@@ -91,7 +91,7 @@ export default function ServicesSection() {
           <h2 className="font-heading font-semibold text-3xl md:text-4xl text-grafite mt-3">
             Serviços Especializados
           </h2>
-          <div className="w-16 h-[3px] bg-gradient-to-r from-verde to-verde-light mx-auto mt-6 rounded-full" />
+          <div className="w-16 h-[3px] bg-dourado mx-auto mt-6 rounded-full" />
           <p className="font-body text-grafite/55 mt-6 max-w-2xl mx-auto text-base">
             Soluções técnicas sob medida para diagnosticar, prevenir e orientar com segurança.
           </p>
@@ -109,7 +109,7 @@ export default function ServicesSection() {
               className="card-lift bg-white p-8 rounded-2xl border border-cinza-dark/30 group relative overflow-hidden"
             >
               {/* Top gradient accent — hidden until hover */}
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-verde to-verde-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div className="absolute top-0 left-0 w-full h-[3px] bg-dourado scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
               {/* Shimmer sweep on hover */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
@@ -123,7 +123,7 @@ export default function ServicesSection() {
                 <h3 className="font-heading font-semibold text-lg text-grafite mb-2 group-hover:text-verde transition-colors duration-300">
                   {service.title}
                 </h3>
-                <div className="w-8 h-[2px] bg-verde/30 mb-4 group-hover:w-12 transition-all duration-500" />
+                <div className="w-8 h-[2px] bg-dourado/40 mb-4 group-hover:w-12 transition-all duration-500" />
                 <ul className="space-y-2.5">
                   {service.items.map((item, idx) => (
                     <li key={idx} className="font-body text-sm text-grafite/55 flex items-start gap-2.5">

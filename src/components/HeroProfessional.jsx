@@ -38,7 +38,7 @@ export default function HeroProfessional() {
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.8, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-verde to-verde-light origin-left rounded-full"
+                  className="absolute -bottom-1 left-0 w-full h-[3px] bg-dourado origin-left rounded-full"
                 />
               </span>
             </motion.h1>
@@ -98,8 +98,8 @@ export default function HeroProfessional() {
             </div>
 
             {/* Decorative frame */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-verde/20" />
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-verde/30 rounded-tl-2xl" />
+            <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-dourado/20" />
+            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-dourado/30 rounded-tl-2xl" />
 
             {/* Floating badge */}
             <motion.div

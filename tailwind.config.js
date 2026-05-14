@@ -34,6 +34,11 @@ export default {
           DEFAULT: '#F3F5F2',
           dark: '#e0e4de',
         },
+        dourado: {
+          DEFAULT: '#B8964E',
+          light: '#D4BC8B',
+          dark: '#9A7B3C',
+        },
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

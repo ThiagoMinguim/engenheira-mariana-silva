@@ -145,7 +145,7 @@ export default function WhyInvestSection() {
             <span className="italic text-[#2F6F4E]">investir?</span>
           </h2>
 
-          <div className="mt-7 h-[3px] w-20 rounded-full bg-[#2F6F4E]" />
+          <div className="mt-7 h-[3px] w-20 rounded-full bg-dourado" />
 
           <p className="mt-10 max-w-md text-xl leading-relaxed text-[#6D7378]">
             Diagnóstico técnico é estratégia. Mais do que identificar problemas,
