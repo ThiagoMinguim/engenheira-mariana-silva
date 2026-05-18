@@ -32,7 +32,7 @@ export default function FooterProfessional() {
   ]
 
   return (
-    <footer className="relative overflow-hidden" style={{ backgroundColor: '#1a1d21' }}>
+    <footer className="relative overflow-hidden bg-[#1a1d21] dark:bg-[#111316]">
       {/* Subtle top gradient */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dourado/30 to-transparent" />
 

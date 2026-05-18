@@ -5,11 +5,14 @@ import WhyInvestSection from './components/WhyInvestSection'
 import ServicesSection from './components/ServicesSection'
 import ContactSection from './components/ContactSection'
 import FooterProfessional from './components/FooterProfessional'
+import { useTheme } from './lib/useTheme'
 
 export default function App() {
+  const [dark, toggleTheme] = useTheme()
+
   return (
     <div className="relative">
-      <Header />
+      <Header dark={dark} toggleTheme={toggleTheme} />
       <HeroProfessional />
       <AboutSection />
       <WhyInvestSection />

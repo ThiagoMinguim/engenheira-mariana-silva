@@ -86,14 +86,14 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="font-body text-verde font-semibold text-xs uppercase tracking-[0.2em]">
+          <span className="font-body text-verde dark:text-verde-300 font-semibold text-xs uppercase tracking-[0.2em]">
             O que eu faço
           </span>
-          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-grafite mt-3">
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-grafite dark:text-white mt-3">
             Serviços Especializados
           </h2>
           <div className="w-16 h-[3px] bg-dourado mx-auto mt-6 rounded-full" />
-          <p className="font-body text-grafite/55 mt-6 max-w-2xl mx-auto text-base">
+          <p className="font-body text-grafite/55 dark:text-white/45 mt-6 max-w-2xl mx-auto text-base">
             Soluções técnicas sob medida para diagnosticar, prevenir e orientar com segurança.
           </p>
         </motion.div>
@@ -107,7 +107,7 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
-              className="card-lift bg-white p-8 rounded-2xl border border-cinza-dark/30 group relative overflow-hidden"
+              className="card-lift bg-white dark:bg-[#22262b] p-8 rounded-2xl border border-cinza-dark/30 dark:border-white/8 group relative overflow-hidden"
             >
               {/* Top gradient accent — hidden until hover */}
               <div className="absolute top-0 left-0 w-full h-[3px] bg-dourado scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
@@ -118,22 +118,22 @@ export default function ServicesSection() {
               </div>
 
               <div className="relative z-10">
-                <div className="w-14 h-14 bg-verde/10 rounded-2xl flex items-center justify-center text-verde mb-6 group-hover:bg-verde group-hover:text-white group-hover:rotate-6 group-hover:scale-110 transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:shadow-verde/20">
+                <div className="w-14 h-14 bg-verde/10 dark:bg-verde/15 rounded-2xl flex items-center justify-center text-verde dark:text-verde-300 mb-6 group-hover:bg-verde group-hover:text-white group-hover:rotate-6 group-hover:scale-110 transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:shadow-verde/20">
                   {service.icon}
                 </div>
-                <h3 className="font-heading font-semibold text-lg text-grafite mb-2 group-hover:text-verde transition-colors duration-300">
+                <h3 className="font-heading font-semibold text-lg text-grafite dark:text-white mb-2 group-hover:text-verde dark:group-hover:text-verde-300 transition-colors duration-300">
                   {service.title}
                 </h3>
                 <div className="w-8 h-[2px] bg-dourado/40 mb-4 group-hover:w-12 transition-all duration-500" />
                 <ul className="space-y-2.5">
                   {service.items.map((item, idx) => (
-                    <li key={idx} className="font-body text-sm text-grafite/55 flex items-start gap-2.5">
-                      <span className="text-verde mt-[7px] flex-shrink-0">
+                    <li key={idx} className="font-body text-sm text-grafite/55 dark:text-white/45 flex items-start gap-2.5">
+                      <span className="text-verde dark:text-verde-300 mt-[7px] flex-shrink-0">
                         <svg className="w-[6px] h-[6px]" fill="currentColor" viewBox="0 0 8 8">
                           <circle cx="4" cy="4" r="3" />
                         </svg>
                       </span>
-                      <span className="group-hover:text-grafite/70 transition-colors">{item}</span>
+                      <span className="group-hover:text-grafite/70 dark:group-hover:text-white/60 transition-colors">{item}</span>
                     </li>
                   ))}
                 </ul>

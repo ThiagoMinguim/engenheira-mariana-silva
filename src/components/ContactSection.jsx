@@ -39,7 +39,7 @@ export default function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-24 bg-white blueprint-grid relative">
+    <section id="contact" className="py-24 bg-white dark:bg-grafite-dark blueprint-grid relative">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Title */}
@@ -50,14 +50,14 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="font-body text-verde font-semibold text-xs uppercase tracking-[0.2em]">
+            <span className="font-body text-verde dark:text-verde-300 font-semibold text-xs uppercase tracking-[0.2em]">
               Entre em contato
             </span>
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-grafite mt-3">
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-grafite dark:text-white mt-3">
               Vamos Conversar
             </h2>
             <div className="w-16 h-[3px] bg-dourado mx-auto mt-6 rounded-full" />
-            <p className="font-body text-grafite/55 mt-6 max-w-2xl mx-auto">
+            <p className="font-body text-grafite/55 dark:text-white/45 mt-6 max-w-2xl mx-auto">
               Tire suas dúvidas ou solicite um orçamento. Estou à disposição para ajudar!
             </p>
           </motion.div>
@@ -68,17 +68,17 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="concrete-texture p-8 md:p-12 rounded-3xl border border-verde/10 relative overflow-hidden shadow-xl shadow-grafite/5"
+            className="concrete-texture p-8 md:p-12 rounded-3xl border border-verde/10 dark:border-white/8 relative overflow-hidden shadow-xl shadow-grafite/5 dark:shadow-black/20"
           >
             {/* Corner accents */}
             <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-dourado/25 rounded-tl-3xl" />
             <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-dourado/25 rounded-br-3xl" />
 
             <div className="text-center mb-10 relative z-10">
-              <h3 className="font-heading font-semibold text-2xl text-grafite mb-2">
+              <h3 className="font-heading font-semibold text-2xl text-grafite dark:text-white mb-2">
                 Conecte-se comigo
               </h3>
-              <p className="font-body text-sm text-grafite/50">
+              <p className="font-body text-sm text-grafite/50 dark:text-white/40">
                 Escolha a melhor forma de entrar em contato
               </p>
             </div>
@@ -96,7 +96,7 @@ export default function ContactSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={social.name === 'WhatsApp' ? trackWhatsAppClick : undefined}
-                  className="card-lift flex flex-col items-center justify-center gap-3 p-8 bg-white rounded-2xl border border-cinza-dark/30 group"
+                  className="card-lift flex flex-col items-center justify-center gap-3 p-8 bg-white dark:bg-[#22262b] rounded-2xl border border-cinza-dark/30 dark:border-white/8 group"
                   style={{ '--accent': social.color }}
                 >
                   <div
@@ -110,28 +110,28 @@ export default function ContactSection() {
                       {social.icon}
                     </div>
                   </div>
-                  <span className="font-heading font-semibold text-base text-grafite">{social.name}</span>
-                  <span className="font-body text-xs text-grafite/40">{social.handle}</span>
+                  <span className="font-heading font-semibold text-base text-grafite dark:text-white">{social.name}</span>
+                  <span className="font-body text-xs text-grafite/40 dark:text-white/35">{social.handle}</span>
                 </motion.a>
               ))}
             </div>
 
             {/* Info row */}
             <div className="mt-10 grid md:grid-cols-2 gap-5 relative z-10">
-              <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-cinza-dark/30 group hover:border-verde/20 transition-colors duration-300">
+              <div className="flex items-start gap-4 p-6 bg-white dark:bg-[#22262b] rounded-xl border border-cinza-dark/30 dark:border-white/8 group hover:border-verde/20 dark:hover:border-verde/30 transition-colors duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-verde to-verde-600 rounded-lg flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-verde/20 group-hover:scale-105 transition-transform duration-300">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-sm text-grafite mb-1">Horário de Atendimento</h4>
-                  <p className="font-body text-sm text-grafite/50">Segunda a Sexta: 8h às 18h</p>
-                  <p className="font-body text-sm text-grafite/50">Sábado: 8h às 12h</p>
+                  <h4 className="font-heading font-semibold text-sm text-grafite dark:text-white mb-1">Horário de Atendimento</h4>
+                  <p className="font-body text-sm text-grafite/50 dark:text-white/40">Segunda a Sexta: 8h às 18h</p>
+                  <p className="font-body text-sm text-grafite/50 dark:text-white/40">Sábado: 8h às 12h</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-cinza-dark/30 group hover:border-verde/20 transition-colors duration-300">
+              <div className="flex items-start gap-4 p-6 bg-white dark:bg-[#22262b] rounded-xl border border-cinza-dark/30 dark:border-white/8 group hover:border-verde/20 dark:hover:border-verde/30 transition-colors duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-verde to-verde-600 rounded-lg flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-verde/20 group-hover:scale-105 transition-transform duration-300">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -139,8 +139,8 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-sm text-grafite mb-1">Atendimento</h4>
-                  <p className="font-body text-sm text-grafite/50">Uberaba e região</p>
+                  <h4 className="font-heading font-semibold text-sm text-grafite dark:text-white mb-1">Atendimento</h4>
+                  <p className="font-body text-sm text-grafite/50 dark:text-white/40">Uberaba e região</p>
                 </div>
               </div>
             </div>

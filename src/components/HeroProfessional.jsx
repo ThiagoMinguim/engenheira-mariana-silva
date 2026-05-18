@@ -5,12 +5,12 @@ export default function HeroProfessional() {
   return (
     <section id="home" className="relative pt-[75px] overflow-hidden">
       {/* Background: cinza claro + blueprint grid sutil */}
-      <div className="absolute inset-0 bg-cinza blueprint-grid" />
+      <div className="absolute inset-0 bg-cinza dark:bg-grafite-dark blueprint-grid" />
 
       {/* Floating decorative blobs */}
-      <div className="absolute top-20 right-[-5%] w-[400px] h-[400px] bg-verde-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob" />
-      <div className="absolute top-60 left-[-8%] w-[350px] h-[350px] bg-verde-200/50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob-delayed" />
-      <div className="absolute bottom-40 right-[20%] w-[300px] h-[300px] bg-verde-light/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob-slow" />
+      <div className="absolute top-20 right-[-5%] w-[400px] h-[400px] bg-verde-100 dark:bg-verde-900/30 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-3xl opacity-40 dark:opacity-20 animate-blob" />
+      <div className="absolute top-60 left-[-8%] w-[350px] h-[350px] bg-verde-200/50 dark:bg-verde-800/20 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-3xl opacity-30 dark:opacity-15 animate-blob-delayed" />
+      <div className="absolute bottom-40 right-[20%] w-[300px] h-[300px] bg-verde-light/20 dark:bg-verde-700/15 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-3xl opacity-30 dark:opacity-15 animate-blob-slow" />
 
       {/* Watermark logo */}
       <div className="absolute right-[-5%] top-[15%] opacity-[0.03] pointer-events-none">
@@ -25,7 +25,7 @@ export default function HeroProfessional() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="font-heading font-semibold text-[clamp(2.2rem,5vw,3.5rem)] text-grafite leading-[1.12] tracking-tight"
+              className="font-heading font-semibold text-[clamp(2.2rem,5vw,3.5rem)] text-grafite dark:text-white leading-[1.12] tracking-tight"
             >
               Diagnóstico preciso{' '}
               <br className="hidden md:block" />
@@ -47,7 +47,7 @@ export default function HeroProfessional() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
-              className="font-body text-lg text-grafite/65 leading-relaxed max-w-lg"
+              className="font-body text-lg text-grafite/65 dark:text-white/55 leading-relaxed max-w-lg"
             >
               Identificamos manifestações patológicas e recomendamos as melhores soluções técnicas para preservar, recuperar e valorizar edificações.
             </motion.p>
@@ -69,7 +69,7 @@ export default function HeroProfessional() {
               </a>
               <a
                 href="#contact"
-                className="group px-8 py-3.5 text-verde font-body font-semibold text-sm rounded-lg border-2 border-verde hover:bg-verde hover:text-white transition-all duration-300 flex items-center gap-2"
+                className="group px-8 py-3.5 text-verde dark:text-verde-300 font-body font-semibold text-sm rounded-lg border-2 border-verde dark:border-verde-300 hover:bg-verde hover:text-white dark:hover:bg-verde dark:hover:text-white dark:hover:border-verde transition-all duration-300 flex items-center gap-2"
               >
                 Falar com especialista
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -87,7 +87,7 @@ export default function HeroProfessional() {
             className="relative"
           >
             {/* Main photo */}
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-grafite/15 group">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-grafite/15 dark:shadow-black/40 group">
               <img
                 src="/mari2.png"
                 alt="Engenheira Mariana Silva"
@@ -106,7 +106,7 @@ export default function HeroProfessional() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.5 }}
-              className="absolute -bottom-5 -left-5 bg-white rounded-xl shadow-xl px-5 py-3 z-20 animate-float-slow"
+              className="absolute -bottom-5 -left-5 bg-white dark:bg-grafite rounded-xl shadow-xl dark:shadow-black/30 px-5 py-3 z-20 animate-float-slow"
             >
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-verde rounded-lg flex items-center justify-center">
@@ -115,8 +115,8 @@ export default function HeroProfessional() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-heading text-[11px] font-semibold text-grafite">CREA Ativo</p>
-                  <p className="font-body text-[9px] text-grafite/50">Eng. Civil</p>
+                  <p className="font-heading text-[11px] font-semibold text-grafite dark:text-white">CREA Ativo</p>
+                  <p className="font-body text-[9px] text-grafite/50 dark:text-white/40">Eng. Civil</p>
                 </div>
               </div>
             </motion.div>
