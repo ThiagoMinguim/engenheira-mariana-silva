@@ -151,7 +151,7 @@ export default function ServicesSection() {
           className="text-center mt-16"
         >
           <a
-            href="https://wa.me/message/CVTWOWWWB553G1"
+            href="https://wa.me/553484262358?text=Oi%20Mariana%2C%20vi%20seu%20site%20e%20queria%20saber%20sobre%20vistoria"
             target="_blank"
             rel="noopener noreferrer"
             onClick={trackWhatsAppClick}

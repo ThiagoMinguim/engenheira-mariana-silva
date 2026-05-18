@@ -101,7 +101,7 @@ export default function Header({ dark, toggleTheme }) {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8 }}
-              href="https://wa.me/message/CVTWOWWWB553G1"
+              href="https://wa.me/553484262358?text=Oi%20Mariana%2C%20vi%20seu%20site%20e%20queria%20saber%20sobre%20vistoria"
               target="_blank"
               rel="noopener noreferrer"
               onClick={trackWhatsAppClick}
@@ -163,7 +163,7 @@ export default function Header({ dark, toggleTheme }) {
                   </motion.button>
                 ))}
                 <a
-                  href="https://wa.me/message/CVTWOWWWB553G1"
+                  href="https://wa.me/553484262358?text=Oi%20Mariana%2C%20vi%20seu%20site%20e%20queria%20saber%20sobre%20vistoria"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={trackWhatsAppClick}
