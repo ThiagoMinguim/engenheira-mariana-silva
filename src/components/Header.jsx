@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { trackWhatsAppClick } from '../lib/gtag'
+import { getWhatsAppUrl, whatsappMessages } from '../lib/whatsapp'
 
 export default function Header({ dark, toggleTheme }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -101,13 +102,13 @@ export default function Header({ dark, toggleTheme }) {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8 }}
-              href="https://wa.me/553484262358?text=Oi%20Mariana%2C%20vi%20seu%20site%20e%20queria%20saber%20sobre%20vistoria"
+              href={getWhatsAppUrl(whatsappMessages.google)}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={trackWhatsAppClick}
+              onClick={() => trackWhatsAppClick('whatsapp-header')}
               className="shimmer-btn ml-3 px-6 py-2.5 bg-verde text-white font-body font-semibold text-[13px] rounded-lg hover:bg-verde-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-verde/20"
             >
-              Solicitar orçamento
+              Chamar no WhatsApp
             </motion.a>
           </nav>
 
@@ -163,13 +164,13 @@ export default function Header({ dark, toggleTheme }) {
                   </motion.button>
                 ))}
                 <a
-                  href="https://wa.me/553484262358?text=Oi%20Mariana%2C%20vi%20seu%20site%20e%20queria%20saber%20sobre%20vistoria"
+                  href={getWhatsAppUrl(whatsappMessages.google)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={trackWhatsAppClick}
+                  onClick={() => trackWhatsAppClick('whatsapp-header-mobile')}
                   className="block w-full text-center mt-3 px-6 py-3 bg-verde text-white font-body font-semibold text-sm rounded-lg"
                 >
-                  Solicitar orçamento
+                  Chamar no WhatsApp
                 </a>
               </div>
             </motion.nav>

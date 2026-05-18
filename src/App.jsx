@@ -5,6 +5,7 @@ import WhyInvestSection from './components/WhyInvestSection'
 import ServicesSection from './components/ServicesSection'
 import ContactSection from './components/ContactSection'
 import FooterProfessional from './components/FooterProfessional'
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton'
 import { useTheme } from './lib/useTheme'
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
       <ServicesSection />
       <ContactSection />
       <FooterProfessional />
+      <FloatingWhatsAppButton />
     </div>
   )
 }

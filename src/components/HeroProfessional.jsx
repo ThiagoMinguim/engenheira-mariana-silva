@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import MagnifyingGlassLogo from './MagnifyingGlassLogo'
+import { trackWhatsAppClick } from '../lib/gtag'
+import { getWhatsAppUrl, whatsappMessages } from '../lib/whatsapp'
 
 export default function HeroProfessional() {
   return (
@@ -49,7 +51,7 @@ export default function HeroProfessional() {
               transition={{ delay: 0.3, duration: 0.7 }}
               className="font-body text-lg text-grafite/65 dark:text-white/55 leading-relaxed max-w-lg"
             >
-              Identificamos manifestações patológicas e recomendamos as melhores soluções técnicas para preservar, recuperar e valorizar edificações.
+              Vistorias, inspeções e laudos técnicos para identificar problemas, orientar soluções e trazer mais segurança para imóveis, reformas e construções.
             </motion.p>
 
             <motion.div
@@ -59,21 +61,25 @@ export default function HeroProfessional() {
               className="flex flex-wrap gap-4 pt-2"
             >
               <a
-                href="#services"
+                id="whatsapp-hero"
+                href={getWhatsAppUrl(whatsappMessages.google)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('whatsapp-hero')}
                 className="shimmer-btn group px-8 py-3.5 bg-verde text-white font-body font-semibold text-sm rounded-lg hover:bg-verde-600 transition-all duration-300 shadow-lg shadow-verde/20 hover:shadow-xl hover:shadow-verde/30 flex items-center gap-2"
               >
-                Nossos serviços
+                Solicitar orçamento pelo WhatsApp
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
               </a>
               <a
-                href="#contact"
+                href="#services"
                 className="group px-8 py-3.5 text-verde dark:text-verde-300 font-body font-semibold text-sm rounded-lg border-2 border-verde dark:border-verde-300 hover:bg-verde hover:text-white dark:hover:bg-verde dark:hover:text-white dark:hover:border-verde transition-all duration-300 flex items-center gap-2"
               >
-                Falar com especialista
+                Nossos serviços
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25 12 15.75 4.5 8.25" />
                 </svg>
               </a>
             </motion.div>
