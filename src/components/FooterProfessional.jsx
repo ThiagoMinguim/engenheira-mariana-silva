@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import MagnifyingGlassLogo from './MagnifyingGlassLogo'
+import { trackWhatsAppClick } from '../lib/gtag'
 
 export default function FooterProfessional() {
   const currentYear = new Date().getFullYear()
@@ -111,6 +112,7 @@ export default function FooterProfessional() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={s.name === 'WhatsApp' ? trackWhatsAppClick : undefined}
                   className="flex items-center gap-3 text-white/40 hover:text-verde-light transition-all duration-300 group"
                 >
                   <svg className="w-4 h-4 text-verde-light/70 group-hover:text-verde-light group-hover:scale-110 transition-all duration-300 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">

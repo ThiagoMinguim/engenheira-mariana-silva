@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { trackWhatsAppClick } from '../lib/gtag'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -83,6 +84,7 @@ export default function Header() {
               href="https://wa.me/message/CVTWOWWWB553G1"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWhatsAppClick}
               className="shimmer-btn ml-3 px-6 py-2.5 bg-verde text-white font-body font-semibold text-[13px] rounded-lg hover:bg-verde-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-verde/20"
             >
               Solicitar orçamento
@@ -127,6 +129,7 @@ export default function Header() {
                   href="https://wa.me/message/CVTWOWWWB553G1"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={trackWhatsAppClick}
                   className="block w-full text-center mt-3 px-6 py-3 bg-verde text-white font-body font-semibold text-sm rounded-lg"
                 >
                   Solicitar orçamento

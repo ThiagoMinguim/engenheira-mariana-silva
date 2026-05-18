@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { HiEye, HiClipboardCheck, HiDocumentText, HiCog, HiScale, HiSupport } from 'react-icons/hi'
 import MagnifyingGlassLogo from './MagnifyingGlassLogo'
+import { trackWhatsAppClick } from '../lib/gtag'
 
 export default function ServicesSection() {
   const services = [
@@ -153,6 +154,7 @@ export default function ServicesSection() {
             href="https://wa.me/message/CVTWOWWWB553G1"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWhatsAppClick}
             className="shimmer-btn inline-flex items-center gap-2 px-10 py-4 bg-verde text-white font-body font-semibold text-sm rounded-xl hover:bg-verde-600 transition-all duration-300 shadow-lg shadow-verde/20 hover:shadow-xl hover:shadow-verde/30 group"
           >
             Solicitar orçamento

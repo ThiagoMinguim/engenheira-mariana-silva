@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { trackWhatsAppClick } from '../lib/gtag'
 
 export default function ContactSection() {
   const socialLinks = [
@@ -94,6 +95,7 @@ export default function ContactSection() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={social.name === 'WhatsApp' ? trackWhatsAppClick : undefined}
                   className="card-lift flex flex-col items-center justify-center gap-3 p-8 bg-white rounded-2xl border border-cinza-dark/30 group"
                   style={{ '--accent': social.color }}
                 >
