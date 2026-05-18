@@ -5,7 +5,7 @@ export default function FloatingWhatsAppButton() {
   return (
     <a
       id="whatsapp-floating"
-      href={getWhatsAppUrl(whatsappMessages.google)}
+      href={getWhatsAppUrl(whatsappMessages.site)}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackWhatsAppClick('whatsapp-floating')}
