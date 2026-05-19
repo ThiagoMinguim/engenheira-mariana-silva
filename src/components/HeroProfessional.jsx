@@ -150,7 +150,7 @@ export default function HeroProfessional() {
             {/* Main photo */}
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-grafite/15 dark:shadow-black/40 group">
               <img
-                src="/mari2.png"
+                src="/mari2 (1).png"
                 alt="Engenheira Mariana Silva"
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
