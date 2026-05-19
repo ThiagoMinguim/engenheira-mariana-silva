@@ -6,16 +6,31 @@ import { getWhatsAppUrl, whatsappMessages } from '../lib/whatsapp'
 export default function HeroProfessional() {
   return (
     <section id="home" className="relative pt-[75px] overflow-hidden">
-      {/* Background: cinza claro + blueprint grid sutil */}
-      <div className="absolute inset-0 bg-cinza dark:bg-grafite-dark blueprint-grid" />
+      {/* 1. Background base */}
+      <div className="absolute inset-0 bg-grafite-dark" />
 
-      {/* Floating decorative blobs */}
-      <div className="absolute top-20 right-[-5%] w-[400px] h-[400px] bg-verde-100 dark:bg-verde-900/30 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-3xl opacity-40 dark:opacity-20 animate-blob" />
-      <div className="absolute top-60 left-[-8%] w-[350px] h-[350px] bg-verde-200/50 dark:bg-verde-800/20 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-3xl opacity-30 dark:opacity-15 animate-blob-delayed" />
-      <div className="absolute bottom-40 right-[20%] w-[300px] h-[300px] bg-verde-light/20 dark:bg-verde-700/15 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-3xl opacity-30 dark:opacity-15 animate-blob-slow" />
+      {/* 2. Video background — visível no lado esquerdo, some no direito */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        style={{ maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 60%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 60%)' }}
+      >
+        <source src="/hf_20260519_015214_1cf88ccd-3aff-4b2f-8079-c555c87ca59e.mp4" type="video/mp4" />
+      </video>
+
+      {/* 3. Overlay — leve na esquerda pra ver o vídeo, forte na direita pra foto limpa */}
+      <div className="absolute inset-0 bg-gradient-to-r from-grafite-dark/30 via-grafite-dark/60 to-grafite-dark/95" />
+
+      {/* Floating decorative blobs (sutis sobre o overlay) */}
+      <div className="absolute top-20 right-[-5%] w-[400px] h-[400px] bg-verde-900/30 rounded-full filter blur-3xl opacity-20 animate-blob" />
+      <div className="absolute top-60 left-[-8%] w-[350px] h-[350px] bg-verde-800/20 rounded-full filter blur-3xl opacity-15 animate-blob-delayed" />
+      <div className="absolute bottom-40 right-[20%] w-[300px] h-[300px] bg-verde-700/15 rounded-full filter blur-3xl opacity-15 animate-blob-slow" />
 
       {/* Watermark logo */}
-      <div className="absolute right-[-5%] top-[15%] opacity-[0.03] pointer-events-none">
+      <div className="absolute right-[-5%] top-[15%] opacity-[0.03] pointer-events-none z-[1]">
         <MagnifyingGlassLogo size={500} className="text-verde" />
       </div>
 
@@ -27,7 +42,7 @@ export default function HeroProfessional() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="font-heading font-semibold text-[clamp(2.2rem,5vw,3.5rem)] text-grafite dark:text-white leading-[1.12] tracking-tight"
+              className="font-heading font-semibold text-[clamp(2.2rem,5vw,3.5rem)] text-white leading-[1.12] tracking-tight"
             >
               Diagnóstico preciso{' '}
               <br className="hidden md:block" />
@@ -49,7 +64,7 @@ export default function HeroProfessional() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
-              className="font-body text-lg text-grafite/65 dark:text-white/55 leading-relaxed max-w-lg"
+              className="font-body text-lg text-white/60 leading-relaxed max-w-lg"
             >
               Vistorias, inspeções e laudos técnicos para identificar problemas, orientar soluções e trazer mais segurança para imóveis, reformas e construções.
             </motion.p>
@@ -75,7 +90,7 @@ export default function HeroProfessional() {
               </a>
               <a
                 href="#services"
-                className="group px-8 py-3.5 text-verde dark:text-verde-300 font-body font-semibold text-sm rounded-lg border-2 border-verde dark:border-verde-300 hover:bg-verde hover:text-white dark:hover:bg-verde dark:hover:text-white dark:hover:border-verde transition-all duration-300 flex items-center gap-2"
+                className="group px-8 py-3.5 text-verde-300 font-body font-semibold text-sm rounded-lg border-2 border-verde-300 hover:bg-verde hover:text-white hover:border-verde transition-all duration-300 flex items-center gap-2"
               >
                 Nossos serviços
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -93,7 +108,7 @@ export default function HeroProfessional() {
             className="relative"
           >
             {/* Main photo */}
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-grafite/15 dark:shadow-black/40 group">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-black/40 group">
               <img
                 src="/mari2.png"
                 alt="Engenheira Mariana Silva"
@@ -112,7 +127,7 @@ export default function HeroProfessional() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.5 }}
-              className="absolute -bottom-5 -left-5 bg-white dark:bg-grafite rounded-xl shadow-xl dark:shadow-black/30 px-5 py-3 z-20 animate-float-slow"
+              className="absolute -bottom-5 -left-5 bg-grafite rounded-xl shadow-xl shadow-black/30 px-5 py-3 z-20 animate-float-slow"
             >
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-verde rounded-lg flex items-center justify-center">
@@ -121,8 +136,8 @@ export default function HeroProfessional() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-heading text-[11px] font-semibold text-grafite dark:text-white">CREA Ativo</p>
-                  <p className="font-body text-[9px] text-grafite/50 dark:text-white/40">Eng. Civil</p>
+                  <p className="font-heading text-[11px] font-semibold text-white">CREA Ativo</p>
+                  <p className="font-body text-[9px] text-white/40">Eng. Civil</p>
                 </div>
               </div>
             </motion.div>
