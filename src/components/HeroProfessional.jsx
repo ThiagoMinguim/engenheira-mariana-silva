@@ -1,9 +1,48 @@
+import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import MagnifyingGlassLogo from './MagnifyingGlassLogo'
 import { trackWhatsAppClick } from '../lib/gtag'
 import { getWhatsAppUrl, whatsappMessages } from '../lib/whatsapp'
 
 export default function HeroProfessional() {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleTimeUpdate = () => {
+      // Fade out nos últimos 1.5s do vídeo
+      const timeLeft = video.duration - video.currentTime
+      if (timeLeft <= 1.5) {
+        video.style.opacity = String(0.4 * (timeLeft / 1.5))
+      } else if (parseFloat(video.style.opacity) < 0.4) {
+        video.style.opacity = '0'
+        // Fade in suave no início
+        requestAnimationFrame(() => {
+          video.style.transition = 'opacity 1.5s ease-in'
+          video.style.opacity = '0.4'
+        })
+      }
+    }
+
+    const handleSeeked = () => {
+      // Quando o vídeo reinicia (loop), faz fade in suave
+      video.style.opacity = '0'
+      requestAnimationFrame(() => {
+        video.style.transition = 'opacity 1.5s ease-in'
+        video.style.opacity = '0.4'
+      })
+    }
+
+    video.addEventListener('timeupdate', handleTimeUpdate)
+    video.addEventListener('seeked', handleSeeked)
+    return () => {
+      video.removeEventListener('timeupdate', handleTimeUpdate)
+      video.removeEventListener('seeked', handleSeeked)
+    }
+  }, [])
+
   return (
     <section id="home" className="relative pt-[75px] overflow-hidden">
       {/* 1. Background base */}
@@ -11,14 +50,15 @@ export default function HeroProfessional() {
 
       {/* 2. Video background — visível no lado esquerdo, some no direito */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
-        style={{ maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 60%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 60%)' }}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ opacity: 0.4, maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 60%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 60%)' }}
       >
-        <source src="/hf_20260519_015214_1cf88ccd-3aff-4b2f-8079-c555c87ca59e.mp4" type="video/mp4" />
+        <source src="/e_d_f_a_bmp_.mp4" type="video/mp4" />
       </video>
 
       {/* 3. Overlay — leve na esquerda pra ver o vídeo, forte na direita pra foto limpa */}
