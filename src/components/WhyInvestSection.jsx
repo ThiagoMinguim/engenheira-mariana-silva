@@ -144,7 +144,7 @@ export default function WhyInvestSection() {
                 onMouseEnter={() => setHovered(item.number)}
                 onMouseLeave={() => setHovered(null)}
                 className={[
-                  "group relative min-h-[260px] overflow-hidden rounded-2xl border p-8 transition-all duration-500 cursor-pointer",
+                  "group relative min-h-[260px] overflow-hidden rounded-2xl border p-8 transition-all duration-500",
                   isActive
                     ? "border-[#2F6F4E]/20 bg-[#2F6F4E] text-white shadow-2xl shadow-[#2F6F4E]/20 -translate-y-1"
                     : "border-[#DDE5DE] dark:border-white/8 bg-white/75 dark:bg-[#22262b]/75 shadow-sm",
