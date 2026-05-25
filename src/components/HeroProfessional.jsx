@@ -48,14 +48,15 @@ export default function HeroProfessional() {
       {/* 1. Background base */}
       <div className="absolute inset-0 bg-cinza dark:bg-grafite-dark" />
 
-      {/* 2. Video background — visível no lado esquerdo, some no direito */}
+      {/* 2. Video background — só no desktop, escondido no mobile pra performance */}
       <video
         ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover brightness-150 dark:brightness-100"
+        preload="none"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover brightness-150 dark:brightness-100"
         style={{ opacity: 0.4, maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 60%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 60%)' }}
       >
         <source src="/e_d_f_a_bmp_.mp4" type="video/mp4" />
