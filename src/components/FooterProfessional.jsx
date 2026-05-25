@@ -53,11 +53,17 @@ export default function FooterProfessional() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-5">
-              <img
-                src="/logo.png"
-                alt="Mariana Silva"
-                className="h-10 w-auto object-contain dark:brightness-0 dark:invert"
-              />
+              <picture>
+                <source type="image/webp" srcSet="/logo.webp" />
+                <img
+                  src="/logo-168.png"
+                  alt="Mariana Silva"
+                  width={168}
+                  height={168}
+                  loading="lazy"
+                  className="h-10 w-auto object-contain dark:brightness-0 dark:invert"
+                />
+              </picture>
               <div className="border-l border-verde/20 dark:border-white/15 pl-3">
                 <span className="font-heading font-bold text-sm tracking-[0.08em] text-grafite dark:text-white block leading-tight uppercase">
                   Mariana Silva

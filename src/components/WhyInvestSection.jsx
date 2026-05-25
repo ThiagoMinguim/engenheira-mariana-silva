@@ -1,10 +1,25 @@
 import { useState } from "react";
-import {
-  TrendingUp,
-  Search,
-  Lightbulb,
-  Scale,
-} from "lucide-react";
+
+const IconTrendingUp = ({ size = 28, strokeWidth = 2 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" />
+  </svg>
+);
+const IconSearch = ({ size = 28, strokeWidth = 2 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+  </svg>
+);
+const IconLightbulb = ({ size = 28, strokeWidth = 2 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" />
+  </svg>
+);
+const IconScale = ({ size = 28, strokeWidth = 2 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+    <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /><path d="M7 21h10" /><path d="M12 3v18" /><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
+  </svg>
+);
 
 const benefits = [
   {
@@ -12,28 +27,28 @@ const benefits = [
     title: "Valorização do Imóvel",
     description:
       "Proteção do investimento imobiliário por meio de diagnósticos precisos que previnem a desvalorização e reduzem custos de manutenção corretiva.",
-    icon: TrendingUp,
+    icon: IconTrendingUp,
   },
   {
     number: "02",
     title: "Detecção e resolução de Anomalias",
     description:
       "Investigação técnica aprofundada para identificar as causas reais de falhas e danos, oferecendo diretrizes precisas para reparos eficazes que evitam a reincidência.",
-    icon: Search,
+    icon: IconSearch,
   },
   {
     number: "03",
     title: "Inteligência Patrimonial e Financeira",
     description:
       "Vistorias e inspeções técnicas que permitem um planejamento inteligente da manutenção, substituindo reformas emergenciais caras por intervenções preventivas e econômicas.",
-    icon: Lightbulb,
+    icon: IconLightbulb,
   },
   {
     number: "04",
     title: "Segurança Jurídica",
     description:
       "Produção de provas técnicas incontestáveis para ações judiciais e extrajudiciais, garantindo segurança jurídica em casos de vícios construtivos ou responsabilidade civil.",
-    icon: Scale,
+    icon: IconScale,
   },
 ];
 

@@ -149,11 +149,21 @@ export default function HeroProfessional() {
           >
             {/* Main photo */}
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-grafite/15 dark:shadow-black/40 group">
-              <img
-                src="/mari2 (1).png"
-                alt="Engenheira Mariana Silva"
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="/mari2-640.webp 640w, /mari2-1080.webp 1080w"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <img
+                  src="/mari2 (1).png"
+                  alt="Engenheira Mariana Silva"
+                  width={1086}
+                  height={1448}
+                  fetchpriority="high"
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+              </picture>
               {/* Subtle gradient overlay at bottom */}
               <div className="absolute inset-0 bg-gradient-to-t from-grafite/20 via-transparent to-transparent" />
             </div>

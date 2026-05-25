@@ -47,11 +47,16 @@ export default function Header({ dark, toggleTheme }) {
             onClick={() => scrollToSection('home')}
             className="flex items-center gap-3 group"
           >
-            <img
-              src="/logo.png"
-              alt="Mariana Silva"
-              className="h-[56px] w-auto object-contain dark:brightness-0 dark:invert"
-            />
+            <picture>
+              <source type="image/webp" srcSet="/logo.webp" />
+              <img
+                src="/logo-168.png"
+                alt="Mariana Silva"
+                width={168}
+                height={168}
+                className="h-[56px] w-auto object-contain dark:brightness-0 dark:invert"
+              />
+            </picture>
             <div className="border-l-[2px] border-verde/30 pl-3">
               <span className="font-heading font-bold text-[17px] tracking-[0.08em] text-grafite dark:text-white block leading-tight uppercase">
                 Mariana Silva
@@ -132,6 +137,7 @@ export default function Header({ dark, toggleTheme }) {
             <button
               className="w-10 h-10 flex items-center justify-center text-grafite dark:text-white/70 hover:text-verde dark:hover:text-verde-300 transition-colors rounded-lg hover:bg-cinza dark:hover:bg-white/10"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             >
               <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                 {isMenuOpen ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M4 6h16M4 12h16M4 18h16" />}
