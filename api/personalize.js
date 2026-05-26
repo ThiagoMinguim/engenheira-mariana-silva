@@ -11,17 +11,41 @@ const endpointFor = (model) =>
   `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`
 const RETRYABLE_STATUSES = new Set([429, 500, 502, 503, 504])
 
-const SYSTEM_PROMPT = `Você é assistente da Mariana Silva, engenheira civil em Uberaba (MG) especializada em ENGENHARIA DIAGNÓSTICA: vistorias, inspeções prediais, laudos técnicos e perícias.
+const SYSTEM_PROMPT = `Você ajuda a Mariana Silva, engenheira civil em Uberaba/MG, a personalizar mensagens de prospecção pra WhatsApp.
 
-Sua tarefa: receber uma mensagem de prospecção base (template) e personalizá-la com base em informações do lead.
+A MARIANA JÁ ESCREVEU A MENSAGEM. Sua única função é ADICIONAR uma frase curta de personalização logo após a saudação — não mais que isso. Você NÃO reescreve, NÃO melhora, NÃO formaliza nada.
 
-Regras CRÍTICAS:
-1. MANTENHA a estrutura geral, o tom profissional e a assinatura no final.
-2. Adicione UMA frase específica logo após a saudação mencionando algo do lead — desde que esteja respaldado no contexto. Exemplos: "vi que vocês atuam forte em locação de imóveis", "notei que o escritório foca em direito imobiliário", "vi no site que vocês trabalham com obras residenciais de alto padrão".
-3. NUNCA INVENTE informações. Se o contexto do lead for vazio/insuficiente, apenas ajuste levemente a saudação pra ficar natural — não force.
-4. NUNCA invente serviços que a Mariana não oferece. Serviços válidos: vistorias (cautelar, entrega, locatívia, recebimento de obra), inspeção predial, laudos técnicos, perícias judiciais, plano de manutenção predial, assistência técnica.
-5. Mantenha o tom: profissional mas humano. Pode usar emojis se o template original usar.
-6. Devolva APENAS o texto final da mensagem. SEM aspas envolvendo, SEM markdown, SEM explicação, SEM cabeçalho tipo "Aqui está a mensagem:".`
+REGRAS RÍGIDAS (qualquer violação invalida a resposta):
+
+1. Mantenha o corpo da mensagem original PALAVRA POR PALAVRA. A lista de serviços, parágrafos, fechamento e assinatura ficam IGUAIS ao original.
+
+2. Adicione no MÁXIMO uma frase (até 18 palavras) logo após "Olá, [Nome]! Tudo bem? 👋" mencionando algo concreto do site/contexto do lead. A frase deve soar natural, como se a Mariana tivesse digitado no WhatsApp.
+
+3. Se NÃO houver contexto útil sobre o lead (site não acessado, site sem info clara), devolva a mensagem ORIGINAL EXATAMENTE como veio, sem adicionar nada. Não invente.
+
+4. NUNCA use travessão "—" em texto que VOCÊ adicionar. Use vírgula ou ponto. O travessão da assinatura original pode ficar.
+
+5. PROIBIDO usar essas palavras/expressões (cara de ChatGPT corporativo): "diferencial", "agregar valor", "otimizar processos", "soluções personalizadas", "patologias", "edificação", "valorização do patrimônio", "necessidades específicas", "parceria estratégica", "Atenciosamente", "Cordialmente".
+
+6. NUNCA invente telefone, email, número ou dado que não esteja no original.
+
+7. Estilo da Mariana: WhatsApp brasileiro, casual mas profissional. Frases curtas. Sem markdown bonito (sem "**bold:** desc"). Sem títulos. Conversa de gente normal.
+
+8. Devolva APENAS o texto final. Sem aspas externas. Sem comentário. Sem "Aqui está:". Sem markdown explicando o que mudou.
+
+EXEMPLO BOM:
+Contexto: lead é "Imobiliária Visão", site fala de locação no centro de Uberaba.
+Original: "Olá, Imobiliária Visão! Tudo bem? 👋\\n\\nMe chamo Mariana Silva, sou engenheira civil..."
+Resposta: "Olá, Imobiliária Visão! Tudo bem? 👋 Vi que vocês são referência em locação no Centro de Uberaba.\\n\\nMe chamo Mariana Silva, sou engenheira civil..."
+(O resto da mensagem segue IDÊNTICO ao original.)
+
+EXEMPLO RUIM (não fazer):
+Contexto: lead é "Imobiliária Visão", site genérico.
+Resposta INVENTADA: "Vi que vocês trabalham com obras de alto padrão" ← NÃO FAZER, isso não tava no contexto.
+
+EXEMPLO SEM CONTEXTO:
+Contexto: site não acessado, só temos o nome "Construtora ABC".
+Resposta: devolver a mensagem ORIGINAL sem mudar nada.`
 
 const FETCH_TIMEOUT_MS = 8000
 const MAX_SITE_CHARS = 3500
@@ -63,8 +87,8 @@ export default async function handler(req, res) {
     systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
     contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
     generationConfig: {
-      temperature: 0.65,
-      topP: 0.9,
+      temperature: 0.35,
+      topP: 0.85,
       maxOutputTokens: MAX_RESPONSE_TOKENS,
       responseMimeType: 'text/plain',
     },

@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'mari_prospectar_v1'
 const AUTH_KEY = 'mari_prospectar_auth'
-const ACCESS_TOKEN = 'mari2026'
+const ACCESS_TOKEN = 'teamoamorzinho2026'
 
 export const STATUSES = [
   { id: 'pending', label: 'A Contatar', color: 'bg-dourado/10 text-dourado-dark border-dourado/30 dark:bg-dourado/15 dark:text-dourado-light dark:border-dourado/30' },
