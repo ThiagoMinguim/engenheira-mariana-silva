@@ -1,22 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
+// Site fixado no modo escuro (decisão da Marília — no claro não dava pra ler bem).
 export function useTheme() {
-  const [dark, setDark] = useState(() => {
-    if (typeof window === 'undefined') return false
-    const stored = localStorage.getItem('theme')
-    if (stored) return stored === 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-  })
-
   useEffect(() => {
-    const root = document.documentElement
-    if (dark) {
-      root.classList.add('dark')
-    } else {
-      root.classList.remove('dark')
-    }
-    localStorage.setItem('theme', dark ? 'dark' : 'light')
-  }, [dark])
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('theme', 'dark')
+  }, [])
 
-  return [dark, () => setDark(prev => !prev)]
+  return [true, () => {}]
 }

@@ -19,6 +19,8 @@ export const whatsappMessages = {
     'Olá, Mariana! Vim pelo site e gostaria de informações sobre plano de manutenção predial.',
   duvida:
     'Olá, Mariana! Vim pelo site e gostaria de tirar uma dúvida sobre qual serviço preciso.',
+  patologia:
+    'Olá, Mariana! Vim pelo site e identifiquei um possível problema na minha edificação. Posso te enviar uma foto?',
 }
 
 export function getWhatsAppUrl(message = whatsappMessages.site) {

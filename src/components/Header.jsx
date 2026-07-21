@@ -20,8 +20,9 @@ export default function Header({ dark, toggleTheme }) {
 
   const navItems = [
     { label: 'Início', id: 'home' },
-    { label: 'Sobre', id: 'about' },
     { label: 'Serviços', id: 'services' },
+    { label: 'Problemas', id: 'problemas' },
+    { label: 'Sobre', id: 'about' },
     { label: 'Por que investir?', id: 'investir' },
     { label: 'Contato', id: 'contact' },
   ]
@@ -83,26 +84,6 @@ export default function Header({ dark, toggleTheme }) {
               </motion.button>
             ))}
 
-            {/* Theme toggle */}
-            <motion.button
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.75 }}
-              onClick={toggleTheme}
-              className="w-9 h-9 flex items-center justify-center rounded-lg text-grafite/70 dark:text-white/70 hover:text-verde dark:hover:text-verde-300 hover:bg-cinza dark:hover:bg-white/10 transition-all duration-300"
-              aria-label={dark ? 'Ativar tema claro' : 'Ativar tema escuro'}
-            >
-              {dark ? (
-                <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                </svg>
-              ) : (
-                <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-                </svg>
-              )}
-            </motion.button>
-
             <motion.a
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -117,23 +98,8 @@ export default function Header({ dark, toggleTheme }) {
             </motion.a>
           </nav>
 
-          {/* Mobile: theme toggle + hamburger */}
+          {/* Mobile: hamburger */}
           <div className="lg:hidden flex items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              className="w-10 h-10 flex items-center justify-center text-grafite dark:text-white/70 hover:text-verde dark:hover:text-verde-300 transition-colors rounded-lg hover:bg-cinza dark:hover:bg-white/10"
-              aria-label={dark ? 'Ativar tema claro' : 'Ativar tema escuro'}
-            >
-              {dark ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-                </svg>
-              )}
-            </button>
             <button
               className="w-10 h-10 flex items-center justify-center text-grafite dark:text-white/70 hover:text-verde dark:hover:text-verde-300 transition-colors rounded-lg hover:bg-cinza dark:hover:bg-white/10"
               onClick={() => setIsMenuOpen(!isMenuOpen)}

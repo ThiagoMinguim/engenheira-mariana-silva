@@ -245,13 +245,6 @@ export default function ProspectarPage({ dark, toggleTheme }) {
               <Plus className="w-4 h-4" />
               Adicionar Lead
             </button>
-            <button
-              onClick={toggleTheme}
-              className="w-9 h-9 flex items-center justify-center rounded-lg text-grafite/70 dark:text-white/70 hover:text-verde dark:hover:text-verde-300 hover:bg-cinza dark:hover:bg-white/10 transition"
-              aria-label="Alternar tema"
-            >
-              {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </button>
             <div className="relative" onClick={(e) => e.stopPropagation()}>
               <button
                 onClick={() => setMenuOpen((v) => !v)}

@@ -1,69 +1,34 @@
-import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import MagnifyingGlassLogo from './MagnifyingGlassLogo'
 import { trackWhatsAppClick } from '../lib/gtag'
 import { getWhatsAppUrl, whatsappMessages } from '../lib/whatsapp'
 
+// Mosaico borrado de patologias por trás do hero (no lugar do vídeo antigo).
+const bgTiles = [
+  'desplacamento-fachada', 'fissuras', 'umidade',
+  'eflorescencia', 'corrosao-armaduras', 'deslocamento-ceramica',
+]
+
 export default function HeroProfessional() {
-  const videoRef = useRef(null)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const handleTimeUpdate = () => {
-      // Fade out nos últimos 1.5s do vídeo
-      const timeLeft = video.duration - video.currentTime
-      if (timeLeft <= 1.5) {
-        video.style.opacity = String(0.4 * (timeLeft / 1.5))
-      } else if (parseFloat(video.style.opacity) < 0.4) {
-        video.style.opacity = '0'
-        // Fade in suave no início
-        requestAnimationFrame(() => {
-          video.style.transition = 'opacity 1.5s ease-in'
-          video.style.opacity = '0.4'
-        })
-      }
-    }
-
-    const handleSeeked = () => {
-      // Quando o vídeo reinicia (loop), faz fade in suave
-      video.style.opacity = '0'
-      requestAnimationFrame(() => {
-        video.style.transition = 'opacity 1.5s ease-in'
-        video.style.opacity = '0.4'
-      })
-    }
-
-    video.addEventListener('timeupdate', handleTimeUpdate)
-    video.addEventListener('seeked', handleSeeked)
-    return () => {
-      video.removeEventListener('timeupdate', handleTimeUpdate)
-      video.removeEventListener('seeked', handleSeeked)
-    }
-  }, [])
-
   return (
     <section id="home" className="relative pt-[75px] overflow-hidden">
       {/* 1. Background base */}
-      <div className="absolute inset-0 bg-cinza dark:bg-grafite-dark" />
+      <div className="absolute inset-0 bg-grafite-dark" />
 
-      {/* 2. Video background — só no desktop, escondido no mobile pra performance */}
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="none"
-        className="hidden md:block absolute inset-0 w-full h-full object-cover brightness-150 dark:brightness-100"
-        style={{ opacity: 0.4, maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 60%)', WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 60%)' }}
-      >
-        <source src="/e_d_f_a_bmp_.mp4" type="video/mp4" />
-      </video>
+      {/* 2. Mosaico de patologias borrado — evoca rachaduras/infiltrações sem distrair */}
+      <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 scale-110 blur-xl opacity-40" aria-hidden="true">
+        {bgTiles.map((t) => (
+          <div
+            key={t}
+            className="bg-cover bg-center"
+            style={{ backgroundImage: `url(/patologias/${t}-blur.webp)` }}
+          />
+        ))}
+      </div>
 
-      {/* 3. Overlay — adapta ao tema */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cinza/40 via-cinza/70 to-cinza/95 dark:from-grafite-dark/30 dark:via-grafite-dark/60 dark:to-grafite-dark/95" />
+      {/* 3. Overlay escuro — mais escuro no lado do texto (esquerda) pra garantir leitura */}
+      <div className="absolute inset-0 bg-gradient-to-r from-grafite-dark/95 via-grafite-dark/80 to-grafite-dark/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-grafite-dark via-transparent to-grafite-dark/50" />
 
       {/* Floating decorative blobs */}
       <div className="absolute top-20 right-[-5%] w-[400px] h-[400px] bg-verde-100 dark:bg-verde-900/30 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-3xl opacity-30 dark:opacity-20 animate-blob" />
@@ -153,14 +118,14 @@ export default function HeroProfessional() {
               <picture>
                 <source
                   type="image/webp"
-                  srcSet="/mari2-640.webp 640w, /mari2-1080.webp 1080w"
+                  srcSet="/profissional-640.webp 640w, /profissional-1080.webp 1023w"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <img
-                  src="/mari2 (1).png"
+                  src="/profissional.jpg"
                   alt="Engenheira Mariana Silva"
-                  width={1086}
-                  height={1448}
+                  width={1023}
+                  height={1537}
                   fetchpriority="high"
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
