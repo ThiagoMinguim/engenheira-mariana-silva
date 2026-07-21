@@ -3,32 +3,30 @@ import MagnifyingGlassLogo from './MagnifyingGlassLogo'
 import { trackWhatsAppClick } from '../lib/gtag'
 import { getWhatsAppUrl, whatsappMessages } from '../lib/whatsapp'
 
-// Mosaico borrado de patologias por trás do hero (no lugar do vídeo antigo).
-const bgTiles = [
-  'desplacamento-fachada', 'fissuras', 'umidade',
-  'eflorescencia', 'corrosao-armaduras', 'deslocamento-ceramica',
-]
-
 export default function HeroProfessional() {
   return (
     <section id="home" className="relative pt-[75px] overflow-hidden">
       {/* 1. Background base */}
       <div className="absolute inset-0 bg-grafite-dark" />
 
-      {/* 2. Mosaico de patologias borrado — evoca rachaduras/infiltrações sem distrair */}
-      <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 scale-110 blur-xl opacity-40" aria-hidden="true">
-        {bgTiles.map((t) => (
-          <div
-            key={t}
-            className="bg-cover bg-center"
-            style={{ backgroundImage: `url(/patologias/${t}-blur.webp)` }}
-          />
-        ))}
-      </div>
+      {/* 2. Vídeo de fundo PARADO — mostra apenas um frame estático (pôster), sem
+             autoplay/loop. Mantém a estética do vídeo sem o movimento que distraía.
+             preload="none": o mp4 não é baixado, só o pôster aparece. */}
+      <video
+        poster="/hero-poster.webp"
+        muted
+        playsInline
+        preload="none"
+        aria-hidden="true"
+        tabIndex={-1}
+        className="absolute inset-0 w-full h-full object-cover object-left opacity-60"
+      >
+        <source src="/e_d_f_a_bmp_.mp4" type="video/mp4" />
+      </video>
 
       {/* 3. Overlay escuro — mais escuro no lado do texto (esquerda) pra garantir leitura */}
-      <div className="absolute inset-0 bg-gradient-to-r from-grafite-dark/95 via-grafite-dark/80 to-grafite-dark/60" />
-      <div className="absolute inset-0 bg-gradient-to-t from-grafite-dark via-transparent to-grafite-dark/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-grafite-dark/90 via-grafite-dark/75 to-grafite-dark/55" />
+      <div className="absolute inset-0 bg-gradient-to-t from-grafite-dark via-transparent to-grafite-dark/40" />
 
       {/* Floating decorative blobs */}
       <div className="absolute top-20 right-[-5%] w-[400px] h-[400px] bg-verde-100 dark:bg-verde-900/30 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-3xl opacity-30 dark:opacity-20 animate-blob" />
