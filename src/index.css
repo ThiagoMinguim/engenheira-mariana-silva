@@ -32,6 +32,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Compensa o header fixo (80px + 3px da linha dourada) quando o navegador
+   pula pra uma âncora — sem isso a seção fica escondida atrás do menu. */
+section[id] {
+  scroll-margin-top: 83px;
+}
+
 body {
   font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
