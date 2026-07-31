@@ -26,9 +26,31 @@ function usePathname() {
   return path
 }
 
+// Abrir a página já com âncora (ex.: /#services vindo de um anúncio) não
+// funciona sozinho: as seções são lazy e ainda não existem no DOM quando o
+// navegador tenta rolar. Tentamos de novo por alguns frames até o alvo montar.
+function useHashOnLoad() {
+  useEffect(() => {
+    const id = window.location.hash.slice(1)
+    if (!id) return
+
+    let tries = 0
+    const tick = () => {
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView()
+        return
+      }
+      if (tries++ < 60) requestAnimationFrame(tick)
+    }
+    requestAnimationFrame(tick)
+  }, [])
+}
+
 export default function App() {
   const [dark, toggleTheme] = useTheme()
   const path = usePathname()
+  useHashOnLoad()
 
   if (path.startsWith('/prospectar')) {
     return (

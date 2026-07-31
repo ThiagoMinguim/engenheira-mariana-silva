@@ -13,11 +13,9 @@ export default function Header({ dark, toggleTheme }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    setIsMenuOpen(false)
-  }
-
+  // Os itens são <a href="#id"> de verdade: o navegador cuida do scroll suave
+  // (scroll-behavior no CSS) e a URL passa a mostrar a seção — dá pra linkar
+  // direto pra /#services num anúncio, por exemplo.
   const navItems = [
     { label: 'Início', id: 'home' },
     { label: 'Serviços', id: 'services' },
@@ -44,8 +42,8 @@ export default function Header({ dark, toggleTheme }) {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
-          <button
-            onClick={() => scrollToSection('home')}
+          <a
+            href="#home"
             className="flex items-center gap-3 group"
           >
             <picture>
@@ -66,22 +64,22 @@ export default function Header({ dark, toggleTheme }) {
                 Engenharia Diagnóstica
               </span>
             </div>
-          </button>
+          </a>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-7">
             {navItems.map((item, i) => (
-              <motion.button
+              <motion.a
                 key={item.id}
+                href={`#${item.id}`}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.08 }}
-                onClick={() => scrollToSection(item.id)}
                 className="font-body text-[13px] font-medium text-grafite/80 dark:text-white/70 hover:text-verde dark:hover:text-verde-300 transition-colors duration-300 relative group py-1"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-verde dark:bg-verde-300 rounded-full group-hover:w-full transition-all duration-300" />
-              </motion.button>
+              </motion.a>
             ))}
 
             <motion.a
@@ -124,16 +122,17 @@ export default function Header({ dark, toggleTheme }) {
             >
               <div className="py-4 space-y-1">
                 {navItems.map((item, i) => (
-                  <motion.button
+                  <motion.a
                     key={item.id}
+                    href={`#${item.id}`}
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: i * 0.05 }}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => setIsMenuOpen(false)}
                     className="block w-full text-left font-body text-sm text-grafite dark:text-white/70 hover:text-verde dark:hover:text-verde-300 hover:bg-verde/5 dark:hover:bg-verde/10 py-3 px-4 rounded-lg transition-all"
                   >
                     {item.label}
-                  </motion.button>
+                  </motion.a>
                 ))}
                 <a
                   href={getWhatsAppUrl(whatsappMessages.google)}
