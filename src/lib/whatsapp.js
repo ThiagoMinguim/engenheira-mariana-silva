@@ -1,5 +1,11 @@
 export const WHATSAPP_PHONE = '553484262358'
 
+// Mesmo número, em formatos de exibição e de discagem.
+// O WhatsApp normaliza o formato antigo (sem o 9), mas tel: e o texto na tela
+// precisam do nono dígito.
+export const PHONE_DISPLAY = '(34) 98426-2358'
+export const PHONE_TEL = '+5534984262358'
+
 export const whatsappMessages = {
   google:
     'Olá, Mariana! Vim pelo Google e gostaria de orientação sobre um serviço de engenharia diagnóstica.',

@@ -1,8 +1,21 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { trackWhatsAppClick } from '../lib/gtag'
-import { getWhatsAppUrl, whatsappMessages } from '../lib/whatsapp'
+import { getWhatsAppUrl, whatsappMessages, PHONE_DISPLAY, PHONE_TEL } from '../lib/whatsapp'
 
 export default function ContactSection() {
+  const [copiado, setCopiado] = useState(false)
+
+  async function copiarTelefone() {
+    try {
+      await navigator.clipboard.writeText(PHONE_TEL)
+      setCopiado(true)
+      setTimeout(() => setCopiado(false), 2000)
+    } catch {
+      // Navegador sem permissão de clipboard: o número segue visível na tela.
+    }
+  }
+
   const socialLinks = [
     {
       name: 'WhatsApp',
@@ -35,7 +48,7 @@ export default function ContactSection() {
           <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
       ),
-      url: 'https://mail.google.com/mail/?view=cm&to=engmarianasilva@gmail.com',
+      url: 'mailto:engmarianasilva@gmail.com',
       color: '#EA4335',
     }
   ]
@@ -120,7 +133,31 @@ export default function ContactSection() {
             </div>
 
             {/* Info row */}
-            <div className="mt-10 grid md:grid-cols-2 gap-5 relative z-10">
+            <div className="mt-10 grid md:grid-cols-3 gap-5 relative z-10">
+              <div className="flex items-start gap-4 p-6 bg-white dark:bg-[#22262b] rounded-xl border border-cinza-dark/30 dark:border-white/8 group hover:border-verde/20 dark:hover:border-verde/30 transition-colors duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-verde to-verde-600 rounded-lg flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-verde/20 group-hover:scale-105 transition-transform duration-300">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div className="min-w-0">
+                  <h4 className="font-heading font-semibold text-sm text-grafite dark:text-white mb-1">Telefone</h4>
+                  <a
+                    href={`tel:${PHONE_TEL}`}
+                    className="font-body text-sm text-grafite/50 dark:text-white/40 hover:text-verde dark:hover:text-verde-300 transition-colors"
+                  >
+                    {PHONE_DISPLAY}
+                  </a>
+                  <button
+                    type="button"
+                    onClick={copiarTelefone}
+                    className="block mt-2 font-body text-xs text-verde dark:text-verde-300 hover:underline"
+                  >
+                    {copiado ? 'Número copiado!' : 'Copiar número'}
+                  </button>
+                </div>
+              </div>
+
               <div className="flex items-start gap-4 p-6 bg-white dark:bg-[#22262b] rounded-xl border border-cinza-dark/30 dark:border-white/8 group hover:border-verde/20 dark:hover:border-verde/30 transition-colors duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-verde to-verde-600 rounded-lg flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-verde/20 group-hover:scale-105 transition-transform duration-300">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
