@@ -10,7 +10,7 @@ desta campanha. Leia inteiro antes de qualquer ação na conta.
 - **Cliente:** Eng. Mariana Silva — engenharia diagnóstica (laudos, vistorias,
   inspeção predial) em Uberaba/MG. Pessoa física, só CPF.
 - **Site:** https://www.engmarianasilva.com.br/ (página única)
-- **Objetivo:** gerar conversas no WhatsApp `+55 34 8426-2358`
+- **Objetivo:** gerar conversas no WhatsApp `(34) 98426-2358`
 - **Conta Google Ads:** `398-172-4009` (chazy249@gmail.com)
 - **Campanha ativa:** `Mari-claude` (nome provisório, pode ser renomeada)
 - **Orçamento:** R$ 200/mês = **R$ 6,60/dia**
@@ -35,7 +35,7 @@ desta campanha. Leia inteiro antes de qualquer ação na conta.
 | Estratégia de lances | **Maximizar cliques**, limite de CPC **R$ 12,00** |
 | IA Max | **Desligado** (incl. personalização de texto e expansão de URL) |
 | Palavras-chave | 20, todas em frase (`"..."`) ou exata (`[...]`) |
-| Negativas | 71, nível campanha, correspondência ampla |
+| Negativas | 88, nível campanha, correspondência ampla |
 | Anúncio | 1 RSA · 15 títulos · 4 descrições · 4 sitelinks · 6 frases de destaque |
 
 **Conversão:** `Contato (Evento do Google Analytics whatsapp_click)`, importada do
@@ -164,25 +164,86 @@ já filtram boa parte do contexto de carro.
 
 ---
 
-## Estado em 26/08 e pendências
+## Estado em 08/09/2026
 
-- Gasto de agosto: ~R$ 106 de R$ 200. A campanha pode travar por atingir o teto
-  antes do fim do mês; setembro reinicia.
-- Ritmo atual: R$ 10,11/dia contra orçamento de R$ 6,60/dia (o Google compensa
-  dentro do mês, sem estourar o total).
-- **Pendente:** confirmar com a Mariana se os 3 contatos de 18–26/08 realmente
-  chegaram no WhatsApp. Se ela viu menos que 3, há gente clicando no botão e
-  desistindo — aí o ajuste é na mensagem pré-preenchida do site, não no Ads.
-- **Decisão de setembro:** se o custo por conversa aproveitável seguir abaixo de
-  R$ 50, avaliar subir o orçamento de R$ 200 para R$ 400.
+### Números acumulados
 
-## Limitação conhecida
+| Janela | Impressões | Cliques | Custo | Conversões |
+|---|---|---|---|---|
+| 31/07–17/08 (travada) | 18 | 3 | R$ 14,94 | 0 |
+| 18/08–26/08 | 167 | 13 | R$ 90,97 | 3 |
+| 27/08–07/09 (aprox.) | ~238 | ~9 | ~R$ 84 | 0 |
+| **Últimos 30 dias** | **414** | **23** | **R$ 182,26** | **3** |
 
-87% do gasto (R$ 79,31 de R$ 90,97) foi para termos de pesquisa que o Google não
-revela, alegando privacidade. Não é erro de configuração — é limitação da
-plataforma. A defesa é manter correspondência de frase e a lista de negativas.
+Gasto por mês: julho R$ 128,49 · agosto R$ 145,03 · setembro R$ 51,64 (até 08/09).
+Faturamento em dia, cartão normal, anúncio aprovado, campanha veiculando.
 
----
+### O diagnóstico honesto
+
+A Mariana confirmou que **nenhuma das 3 conversas chegou no WhatsApp dela**.
+
+Investigado e descartado:
+
+- O número no site (`553484262358`, sem o nono dígito) **funciona** — o WhatsApp
+  normaliza o formato antigo brasileiro. O link abre a conta dela corretamente.
+- Faturamento, aprovação do anúncio e veiculação estão todos normais.
+
+O que sobrou, e que é o ponto central:
+
+```
+23 cliques no anúncio  →  chegaram no site
+ 3 cliques no WhatsApp →  13% demonstraram intenção
+```
+
+**13% de clique no CTA é uma taxa boa.** O funil não está quebrado — o volume é
+que é baixo demais. R$ 182/mês com CPC de R$ 7,92 compra 23 visitantes, e 23
+visitantes rendem 3 intenções. É aritmética de orçamento, não defeito técnico.
+
+Com n=3 conversões, nenhuma conclusão sobre "por que não viraram mensagem" tem
+significância estatística. Duas causas plausíveis e não distinguíveis com essa
+amostra: atrito no desktop (40% dos cliques vêm de computador, onde o WhatsApp
+Web exige escanear QR code) e simples acaso.
+
+### Mudanças no site (commitadas e no ar em 08/09)
+
+| Commit | O quê |
+|---|---|
+| `34476b1` | `window.gtag` passou a ser definido no parse do HTML. Antes só existia após o `load`, e cliques nos primeiros segundos eram perdidos — justamente o evento que alimenta a conversão |
+| `ce4d5f0` | Card de telefone visível com link `tel:` e botão de copiar; e-mail trocado de link do Gmail para `mailto:` |
+| `cbb60f0` | Documentação da campanha |
+
+Motivo do `ce4d5f0`: no desktop o WhatsApp exige QR code, e o site não oferecia
+nenhuma outra forma de contato (o número não aparecia em lugar nenhum e o e-mail
+forçava login no Gmail).
+
+### A decisão que está em aberto
+
+| Caminho | Consequência |
+|---|---|
+| Manter R$ 200/mês | ~3 intenções/mês. Ads como canal secundário |
+| Subir para R$ 400–500 | ~50 cliques/mês, ~6 intenções, dados suficientes para otimizar |
+| Pausar o Ads | Investir no Perfil da Empresa, que é gratuito |
+
+**Recomendação registrada:** com esse orçamento, o Perfil da Empresa verificado
+provavelmente rende mais contato que os R$ 200 do Ads. Pedir avaliação a cada
+cliente atendido compõe todo mês, sem CPC. O Ads faz sentido como acelerador
+quando houver orçamento para volume.
+
+### Próxima investigação sugerida (grátis)
+
+No GA4, comparar **tráfego pago vs orgânico**: se quem chega pelo orgânico
+converte e quem vem do anúncio não, o problema é qualidade de tráfego; se
+ninguém converte, o site precisa de trabalho. Responde mais que qualquer ajuste
+no Ads com a amostra atual.
+
+### Pendências
+
+- **A Mariana confirmou que quer receber pedidos de laudo/perícia de sinistro**
+  (ver seção do erro nas negativas acima). A correção de `seguro`/`sinistro`
+  está autorizada e ainda não foi aplicada.
+- Renomear a campanha de `Mari-claude` para algo descritivo (opcional).
+- Verificar no WhatsApp dela a caixa de "Solicitações de mensagem" e conversas
+  arquivadas — conta Business às vezes filtra mensagem de número desconhecido.
 
 ## Documentação completa
 
