@@ -119,8 +119,6 @@ recusadas.** Com R$ 6,60/dia não há orçamento para o algoritmo aprender.
 
 ---
 
----
-
 ## ⚠️ ERRO CONHECIDO NA LISTA DE NEGATIVAS — corrigir
 
 `sinistro` e `seguro` estão negativados desde julho/2026, colocados por engano no
@@ -249,4 +247,4 @@ no Ads com a amostra atual.
 
 - [`campanha.md`](./campanha.md) — plano, palavras-chave, textos do anúncio, histórico de resultados
 - [`passo-a-passo.md`](./passo-a-passo.md) — guia de execução e estado da configuração
-- [`negativas.txt`](./negativas.txt) — as 71 negativas
+- [`negativas.txt`](./negativas.txt) — as 88 negativas
